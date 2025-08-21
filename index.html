@@ -1,78 +1,69 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>My Personal Webpage></title>
-        <link rel="stylesheet" type="text/css" href="style.css">
-    </head>
-    <body>
-        <nav>
-            <ul class ="navbar">
-                <li><a href="index.html">Main</a></li>
-                <li><a href="Page 2.html">Page 2</a></li>
-            </ul>
-        </nav>
-        <h1>Welcome to My Webpage</h1>
-        <h2>About Me</h2>
-        <p>My name is Hawi Janet. I am currently an undergraduate student at USIU learning to code using HTML
-            and I love to read books and learn new things.
-        </p>
-        <p>Visit my favourite website: <a href="https://archiveofourown.org/" target="_blank">Archive Of Our Own</a></p>
-        <h3>My Favourite Books</h3>
-        <ul>
-            <li>Percy Jackson</li>
-            <li>Heroes of Olympus</li>
-            <li>Lover Unbound</li>
+<html lang="en">
+    <div style="text-align: center;">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+    content="width=device-width, initial-scale=1.0">
+    <title>My First Web Page</title>
+</head>
+
+    <header>
+        <h3>Welcome to this Web Page</h3>
+    </header>
+
+<body>
+    <nav>
+        <ul class="navbar">
+            <li><a href="index.html">Main</a></li>
+            <li><a href="IndexPage2.html">Page 2</a></li>
         </ul>
-        <h3>My Goals for the Year</h3>
-        <ol>
-            <li>Master HTML and code websites</li>
-            <LI>Learn C++ and code using it</LI>
-            <LI>Finish my first year of college with good grades</LI>
-            <li>Finish reading a book series I started</li>
-            <li>Successfully apply for the student exchange program</li>
-        </ol>
-        <h3>My Weekly Schedule</h3>
-        <table border="1" style="margin: 0 auto; text-align: center;">
-        <table class="timetable">
-            <thead>
-            <tr>
-                <th>Day</th>
-                <th>Activity</th>
-            </thead>
-            </tr>
-            <tbody>
-            <tr>
-                <td>Monday/Wednesday</td>
-                <td>Go to class</td>
-                <td>Study at home after classes</td>
-            </tr>
-            <tr>
-                <td>Tuesday/Thursday</td>
-                <td>Go to class</td>
-                <td>Clean the house</td>
-                <td>Study</td>
-            </tr>
-            <tr>
-                <td>Friday</td>
-                <td>Thoroughly clean the house</td>
-            </tr>
-            </tbody>
-            </table>
-        </table>
-        <div style="text-align: center;">
-        <h3>My Picture</h3>
-        </div>
-        <div style="display: flex; justify-content: center;">
-        <div class="image-gallery">
-        <div class="image-container">
-            <img src="c:\Users\HAWII\OneDrive\Documents\APT\MyWebpage\Thor Profilepicture.jpg" alt="My Picture" width="600" height="400">
-            <div class="image-overlay">
-                <h3>THOR ODINSON</h3>
-                <p>God of Thunder, The Strongest Avenger.</p>
-            </div>
-        </div>
-        </div>
-        </div>
-        <p>*Link to the second page of this website: <a href="Page 2.html" target="_blank">Page Two</a></p>
-    </body>
+    </nav>
+  
+    <h1>Welcome to Web Design</h1>
+    <p>This is my first web page</p>
+    <h2>Adding an image</h2>
+    <img src="c:\Users\HAWII\OneDrive\Documents\APT\MyFirst WebPage\Mikasaprofile.jpg.jpg" alt="My Profile Picture" height="450", width="500">
+   <div class="flex-centered">
+    <h2>Useful Links</h2>
+    <p>Check out these websites:</p>
+    <ul style="list-style-position: inside;">
+        <li><a href="https://www.google.com" target="_blank">Google</a></li>
+        <li><a href="https://www.wikipedia.org" target="_blank">Wikipedia</a></li>
+        <li><a href="https://www.w3schools.com" target="_blank">W3Schools</a></li>  
+    </ul>
+   </div> 
+
+    <h2>My To-Do List</h2>
+    <input type="text" id="taskInput" placeholder="Enter a task">
+        <button onclick="addTask()">Add Task</button>
+        <ul id="taskList"></ul>
+ <script>
+    function addTask() {
+    let taskInput = document.getElementById("taskInput");
+    let taskText = taskInput.value.trim();
+        if (taskText === "") {
+            alert("Please enter a task!");
+        return;
+ }
+    let li = document.createElement("li");
+    li.innerHTML = `
+        <span onclick="toggleTask(this)">${taskText}</span>
+        <button onclick="removeTask(this)">ᤶ</button>
+ `;
+    document.getElementById("taskList").appendChild(li);
+    taskInput.value = "";
+ }
+    function toggleTask(task) {
+        task.classList.toggle("completed");
+ }
+    function removeTask(button) {
+        button.parentElement.remove();
+ }
+ </script> 
+    <footer>
+        <p>This is gonna be fun</p>
+    </footer>
+</body></div>
 </html>
